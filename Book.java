@@ -2,9 +2,12 @@ package thrillio;
 
 import java.util.Arrays; //this is a comment
 
-import thrillio.constants.BookGenre;
+import org.apache.commons.lang3.StringUtils;
 
-public class Book extends Bookmark {
+import thrillio.constants.BookGenre;
+import thrillio.partner.Shareable;
+
+public class Book extends Bookmark implements Shareable {
 	
 	private int publicationYear;
 	private String publisher;
@@ -65,6 +68,29 @@ public class Book extends Bookmark {
 			return false;
 		}
 		return true;
+	}
+
+	@Override
+	public String getItemData() {
+		// TODO Auto-generated method stub
+		
+		//use StringBuilder when performance is concerned 
+		
+		StringBuilder builder = new StringBuilder();
+		builder.append("<item>");
+		
+			builder.append("<type>Book</type>");
+			builder.append("<title>").append(getTitle()).append("</title>");
+			builder.append("<authors>").append(StringUtils.join(author, ",")).append("</authors>");
+			builder.append("<publishers>").append(getPublisher()).append("</publishers>");
+			builder.append("<publicationYear>").append(getPublicationYear()).append("</publicationYear>");
+			builder.append("<genre>").append(getGenre()).append("</genre>");
+			builder.append("<amazonRating>").append(getAmazonRating()).append("</amazonRating>");
+		
+		builder.append("</item>");
+			
+		
+		return builder.toString();
 	}
 
 

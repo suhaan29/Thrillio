@@ -16,9 +16,9 @@ public class Launch {
 		users = UserManager.getInstance().getUsers();
 		bookmarks = BookmarkManager.getInstance().getBookmarks();
 		
-		System.out.println("Printing data...");
-		printUserDate();
-		printBookmarkDate();
+		//System.out.println("Printing data..."); checking whether we were loading the data correctly
+		//printUserDate();
+		//printBookmarkDate();
 		
 	}
 
@@ -48,16 +48,16 @@ public class Launch {
 		// TODO Auto-generated method stub
 		
 		loadData();
-		startBookmarking();
+		start();
 
 	}
 
-	private static void startBookmarking() {
+	private static void start() {
 		// TODO Auto-generated method stub
 		System.out.println("2. Loading data(bookmarking)");
 		for(User user : users)
 		{
-			View.bookmark(user, bookmarks);
+			View.browse(user, bookmarks);
 		}
 		
 	}
