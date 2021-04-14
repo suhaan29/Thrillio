@@ -24,7 +24,7 @@ public class Launch {
 
 	private static void printBookmarkDate() {
 		// TODO Auto-generated method stub
-		for(Bookmark[] bookmarkList : bookmarks)
+		for(Bookmark[] bookmarkList : bookmarks) //this is how you traverse a 2d array 
 		{
 			for(Bookmark bookmark : bookmarkList)
 			{

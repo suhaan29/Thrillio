@@ -1,6 +1,6 @@
 package thrillio;
 
-public class Bookmark {
+public abstract class Bookmark {
 
 	private long id;
 	private String title;
@@ -29,6 +29,9 @@ public class Bookmark {
 	public void setProfileUrl(String profileUrl) {
 		this.profileUrl = profileUrl;
 	}
+	
+	public abstract boolean isKidFriendlyEligible(); //can be helpful got kids bookmarks
+	
 
 	@Override
 	public String toString() {
